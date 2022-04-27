@@ -1,6 +1,11 @@
+import { ViewStyle } from "react-native";
 import { Colors } from "./variables";
 
-export const Global = {
+interface IGlobal {
+   page: ViewStyle;
+}
+
+export const Global: IGlobal = {
    page: {
       flex: 1,
       alignItems: "center",
