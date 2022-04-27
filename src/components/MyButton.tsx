@@ -1,15 +1,20 @@
-import { StyleProp, TextStyle, StyleSheet, Text } from "react-native";
+import { StyleProp, TextStyle, StyleSheet, Text, TouchableOpacity } from "react-native";
 
 type MyButtonType = "bordered";
 
 interface IMyButton {
    style?: StyleProp<TextStyle>;
    type?: MyButtonType;
+   onPress: () => void;
    children: string;
 }
 
-const MyButton = ({ style, type = "bordered", children }: IMyButton) => {
-   return <Text style={[styles.button, styleTypes[type], style]}>{children}</Text>;
+const MyButton = ({ style, type = "bordered", onPress, children }: IMyButton) => {
+   return (
+      <TouchableOpacity onPress={onPress}>
+         <Text style={[styles.button, styleTypes[type], style]}>{children}</Text>;
+      </TouchableOpacity>
+   );
 };
 
 export default MyButton;
@@ -17,7 +22,9 @@ export default MyButton;
 const styles = StyleSheet.create({
    button: {
       fontSize: 18,
+      fontWeight: "700",
       textAlign: "center",
+      borderRadius: 4,
       color: "#fff",
    },
 });

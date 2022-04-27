@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
 
 const styleTypes = StyleSheet.create({
    main: {
+      borderRadius: 4,
       backgroundColor: Colors.LIGHT_BLUE,
    },
 });
