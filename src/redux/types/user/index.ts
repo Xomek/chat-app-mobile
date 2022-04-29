@@ -1,0 +1,4 @@
+export const ASYNC_SET_USER = "ASYNC_SET_USER";
+export const SET_USER = "SET_USER";
+export const SET_USER_REJECTED = "SET_USER_REJECTED";
+export const SET_USER_FULFILLED = "SET_USER_FULFILLED";

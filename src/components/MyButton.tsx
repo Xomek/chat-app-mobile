@@ -12,7 +12,7 @@ interface IMyButton {
 const MyButton = ({ style, type = "bordered", onPress, children }: IMyButton) => {
    return (
       <TouchableOpacity onPress={onPress}>
-         <Text style={[styles.button, styleTypes[type], style]}>{children}</Text>;
+         <Text style={[styles.button, styleTypes[type], style]}>{children}</Text>
       </TouchableOpacity>
    );
 };

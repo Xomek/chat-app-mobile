@@ -3,12 +3,14 @@ import { StyleSheet, SafeAreaView, StatusBar, Platform } from "react-native";
 import { Colors } from "./src/styles/variables";
 import { Provider } from "react-redux";
 import store from "./src/redux/store";
+import Home from "./src/screens/Home";
 
 export default function App() {
    return (
       <Provider store={store}>
          <SafeAreaView style={styles.container}>
-            <ExpoStatusBar style="auto" backgroundColor={Colors.BLUE} />
+            <ExpoStatusBar style="light" backgroundColor={Colors.BLUE} />
+            <Home />
          </SafeAreaView>
       </Provider>
    );

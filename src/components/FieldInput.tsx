@@ -4,16 +4,18 @@ import { Colors } from "../styles/variables";
 type FieldInputType = "main";
 
 interface IFieldInput {
+   onChangeText: any;
+   value: string;
    style?: StyleProp<TextStyle>;
    label?: string;
    type?: FieldInputType;
 }
 
-const FieldInput = ({ style, label, type = "main" }: IFieldInput) => {
+const FieldInput = ({ onChangeText, value, style, label, type = "main", ...props }: IFieldInput) => {
    return (
       <View>
          {label && <Text style={styles.label}>{label}</Text>}
-         <TextInput style={[styles.input, styleTypes[type], style]} />
+         <TextInput style={[styles.input, styleTypes[type], style]} onChangeText={onChangeText} {...props} value={value} />
       </View>
    );
 };
