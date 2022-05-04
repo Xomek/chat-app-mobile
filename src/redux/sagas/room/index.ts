@@ -11,6 +11,7 @@ async function enterChat(room: IRoom) {
       const res = await addDoc(collection(db, "rooms"), {
          theme: room.theme,
          subTheme: room.subTheme,
+         authorId: room.author,
       });
 
       const doc = await getDoc(res);

@@ -1,7 +1,7 @@
 import { IUser } from "../../../interfaces/user.interface";
 import { ASYNC_SET_USER, SET_USER, SET_USER_FULFILLED, SET_USER_REJECTED } from "../../types/user";
 
-export const asyncSetUserCreator = (user: IUser) => {
+export const asyncSetUserCreator = (user: any) => {
    return { type: ASYNC_SET_USER, payload: user };
 };
 

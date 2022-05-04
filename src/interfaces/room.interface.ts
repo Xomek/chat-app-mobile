@@ -1,5 +1,5 @@
 export interface IRoom {
-   roomId: string;
+   author: string;
    theme: string;
    subTheme: string;
 }

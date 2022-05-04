@@ -13,9 +13,10 @@ async function enterChat(userName: IUser) {
       });
 
       const doc = await getDoc(res);
+      const userId = doc.id;
       const name = await doc.data()!.userName;
 
-      return name;
+      return { _id: userId, name };
    } catch (error) {
       return error;
    }
@@ -26,7 +27,7 @@ export function* userEnterChatWorker({ payload }: any) {
       const user: IUser = yield call(enterChat, payload.userName);
       yield put(setUserCreatorFulfilled());
       yield put(setUserCreator(user));
-      yield put(asyncSetRoomCreator({ theme: payload.theme, subTheme: payload.subTheme }));
+      yield put(asyncSetRoomCreator({ author: user._id, theme: payload.theme, subTheme: payload.subTheme }));
    } catch (error) {
       yield put(setUserCreatorRejected(error));
    }
